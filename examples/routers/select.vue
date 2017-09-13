@@ -1,59 +1,85 @@
+<!--<template>-->
+    <!--<div>-->
+        <!--{{ model10 }} - -->
+        <!--{{ model11 }}-->
+        <!--<Select v-model="model10" style="width:260px">-->
+            <!--<Option v-for="(item, index) in cityList" :value="item.value" :key="index">{{ item.label }}</Option>-->
+        <!--</Select>-->
+        <!--<Select v-model="model11" style="width:260px">-->
+            <!--<Option v-for="(item, index) in cityList" :value="item.value" :key="index">{{ item.label }}</Option>-->
+        <!--</Select>-->
+    <!--</div>-->
+<!--</template>-->
+<!--<script>-->
+    <!--export default {-->
+        <!--data () {-->
+            <!--return {-->
+                <!--cityList: [],-->
+                <!--model10: '',-->
+                <!--model11: '',-->
+                <!--model12: ''-->
+            <!--}-->
+        <!--},-->
+        <!--mounted () {-->
+            <!--setTimeout(() => {-->
+                <!--this.cityList = [-->
+                    <!--{-->
+                        <!--value: 'beijing',-->
+                        <!--label: '北京市'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--value: 'shanghai',-->
+                        <!--label: '上海市'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--value: 'shenzhen',-->
+                        <!--label: '深圳市'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--value: 'hangzhou',-->
+                        <!--label: '杭州市'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--value: 'nanjing',-->
+                        <!--label: '南京市'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--value: 'chongqing',-->
+                        <!--label: '重庆市'-->
+                    <!--}-->
+                <!--];-->
+            <!--}, 1000);-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
 <template>
     <div>
-        <h4>有remote属性</h4>
-        {{ selectedIds }}
-        <i-select remote clearable filterable multiple :label="selectedLabel" v-model="selectedIds" style='margin-bottom:20px;'>
-            <i-option v-for="option in list" :value="option.id" :key="option.id">{{option.name}}</i-option>
-        </i-select>
-        <i-button @click="setVal3">设置3</i-button>
+        <Select v-model="value">
+            <Option v-for="item in list" :value="item.value" :label="item.label" :key="item.value"></Option>
+        </Select>
+        <Button @click="setList">set list</Button>
     </div>
 </template>
 <script>
     export default {
         data () {
             return {
-                list: [],
-                selectedIds: [],
-                selectedLabel: []
+                value: '',
+                list: []
             }
         },
         methods: {
-            setVal1: function () {
-                this.selectedLabel = ['几何', '化学'];
-                this.selectedIds = ['201701041343', '201701011541']
-
-            },
-            setVal2: function () {
-                this.selectedLabel = ['政治', '英语', '数学'];
-                this.selectedIds = ['201701031442', '201701061244', '201701011145']
-            },
-            setVal3: function () {
-                this.selectedLabel = [];
-                this.selectedIds = [];
+            setList () {
+                let list = [];
+                for (let i = 0; i < 400; i++) {
+                    list.push({
+                        value: 'value' + i,
+                        label: 'label' + i
+                    });
+                }
+                this.list = list;
             }
-        },
-        mounted () {
-            setTimeout(() => {
-                this.list = [{
-                    name: '语文',
-                    id: '201701011046'
-                }, {
-                    name: '数学',
-                    id: '201701011145'
-                }, {
-                    name: '英语',
-                    id: '201701061244'
-                }, {
-                    name: '几何',
-                    id: '201701041343'
-                }, {
-                    name: '政治',
-                    id: '201701031442'
-                }, {
-                    name: '化学',
-                    id: '201701011541'
-                }]
-            }, 1000)
         }
     }
 </script>
