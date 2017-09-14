@@ -16,12 +16,11 @@ script:
   - npm run dist:dev
 
 after_script:
-  - ls -l * && pwd
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
-  - git add ./dist/*
+  - git add ./dist/* && ls -l dist/*
   - git commit -m "Update dist"
-  - git push --force "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
+  - git push "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
 # E: Build LifeCycle
 
 #指定分支，只有指定的分支提交时才会运行脚本
