@@ -19,7 +19,7 @@ after_script:
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
   - git add ./dist/* && ls -l dist/*
-  - git commit -m "Update dist"
+  - git commit -m "this?"
   - git push "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
 # E: Build LifeCycle
 
