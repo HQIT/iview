@@ -15,22 +15,22 @@ script:
   - npm run dist:dev
 
 after_script:
-#  - git config user.name "${U_NAME}"
-#  - git config user.email "${U_EMAIL}"
-#  - git add ./dist/* && ls -l dist/*
-#  - git commit -m "update dist `date +%s%N`"
-#  - git log 2.0 ^origin/2.0
-#  - git push --force "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
+  - git config user.name "${U_NAME}"
+  - git config user.email "${U_EMAIL}"
+  - git add ./dist/*
+  - git commit -m "update dist `date +%s%N`"
+  - git log 2.0 ^origin/2.0
+  - git push --force "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
 # E: Build LifeCycle
 
 deploy:
-  provider: releases
-  api_key: "${GH_TOKEN}"
-  file_glob: true
-  file: dist/*
+#  provider: releases
+#  api_key: "${GH_TOKEN}"
+#  file_glob: true
+#  file: dist/*
   skip_cleanup: true
-  on:
-    tags: true
+#  on:
+#    tags: true
 
 #指定分支，只有指定的分支提交时才会运行脚本
 branches:
