@@ -15,7 +15,6 @@ script:
   - npm run dist:dev
 
 #after_script:
-#after_success:
 #  - git config user.name "${U_NAME}"
 #  - git config user.email "${U_EMAIL}"
 #  - git add ./dist/*
