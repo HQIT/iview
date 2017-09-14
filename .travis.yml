@@ -19,6 +19,7 @@ after_script:
   - git config user.email "${U_EMAIL}"
   - git add ./dist/* && ls -l dist/*
   - git commit -m "update dist `date +%s%N`"
+  - git log 2.0 ^origin/2.0
   - git push --force "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
 # E: Build LifeCycle
 
