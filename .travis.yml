@@ -9,7 +9,6 @@ cache:
 install:
   - npm install
 before_script:
-  - git pull
 
 # 无其他依赖项所以执行npm run build 构建就行了
 script:
@@ -19,7 +18,7 @@ after_script:
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
   - git add ./dist/* && ls -l dist/*
-  - git commit -m "this?"
+  - git commit -m "update dist `date +%s%N`"
   - git push "https://${GH_TOKEN}@${GH_REF}" 2.0:${PUB_BRANCH}
 # E: Build LifeCycle
 
