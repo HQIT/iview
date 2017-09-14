@@ -12,8 +12,7 @@ before_script:
 
 # 无其他依赖项所以执行npm run build 构建就行了
 script:
-#  - npm run dist:dev
-  - npm run build
+  - npm run dist:dev
 
 #after_script:
 #after_success:
