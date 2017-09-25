@@ -3,14 +3,17 @@
         <div ref="reference" :class="[prefixCls + '-rel']">
             <slot>
                 <i-input
+                    :element-id="elementId"
                     :class="[prefixCls + '-editor']"
                     :readonly="!editable || readonly"
                     :disabled="disabled"
                     :size="size"
                     :placeholder="placeholder"
                     :value="visualValue"
+                    :name="name"
                     @on-input-change="handleInputChange"
                     @on-focus="handleFocus"
+                    @on-blur="handleBlur"
                     @on-click="handleIconClick"
                     @mouseenter.native="handleInputMouseenter"
                     @mouseleave.native="handleInputMouseleave"
@@ -197,6 +200,12 @@
             transfer: {
                 type: Boolean,
                 default: false
+            },
+            name: {
+                type: String
+            },
+            elementId: {
+                type: String
             }
         },
         data () {
@@ -285,6 +294,9 @@
             handleFocus () {
                 if (this.readonly) return;
                 this.visible = true;
+            },
+            handleBlur () {
+                this.visible = false;
             },
             handleInputChange (event) {
                 const oldValue = this.visualValue;
@@ -474,6 +486,9 @@
                     if (this.picker) this.picker.resetView && this.picker.resetView(true);
                     this.$refs.drop.destroy();
                     if (this.open === null) this.$emit('on-open-change', false);
+                    // blur the input
+                    const input = this.$el.querySelector('input');
+                    if (input) input.blur();
                 }
             },
             internalValue(val) {
