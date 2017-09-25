@@ -539,6 +539,7 @@
                 if (!this.cloneColumns[index]._isFiltered) this.cloneColumns[index]._filterChecked = [];
             },
             filterData (data, column) {
+                this.handleResize();
                 return data.filter((row) => {
                     //如果定义了远程过滤方法则忽略此方法
                     if (typeof column.filterRemote === 'function') return true;
