@@ -576,9 +576,7 @@
                 this.cloneColumns[index]._isFiltered = true;
                 this.cloneColumns[index]._filterVisible = false;
 
-                this.$emit('on-filter-change', {
-                    data: this.rebuildData
-                });
+                this.$emit('on-filter-change', this.rebuildData);
             },
             handleFilterSelect (index, value) {
                 this.cloneColumns[index]._filterChecked = [value];
