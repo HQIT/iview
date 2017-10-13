@@ -25929,6 +25929,8 @@ exports.default = {
             var filterData = this.makeDataWithSort();
             filterData = this.filterOtherData(filterData, index);
             this.rebuildData = filterData;
+
+            this.$emit('on-filter-change', this.rebuildData);
         },
         makeData: function makeData() {
             var data = (0, _assist.deepCopy)(this.data);
