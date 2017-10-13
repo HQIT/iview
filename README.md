@@ -4,8 +4,15 @@
     </a>
 </p>
 
-# iView 
-[![](https://img.shields.io/travis/iview/iview.svg?style=flat-square)](https://travis-ci.org/HQIT/iview.svg?branch=2.0) 
+# iView
+[![](https://img.shields.io/travis/iview/iview.svg?style=flat-square)](https://travis-ci.org/iview/iview)
+[![iView](https://img.shields.io/npm/v/iview.svg?style=flat-square)](https://www.npmjs.org/package/iview)
+[![NPM downloads](http://img.shields.io/npm/dm/iview.svg?style=flat-square)](https://npmjs.org/package/iview)
+[![NPM downloads](https://img.shields.io/npm/dt/iview.svg?style=flat-square)](https://npmjs.org/package/iview)
+![JS gzip size](http://img.badgesize.io/https://unpkg.com/iview/dist/iview.min.js?compression=gzip&label=gzip%20size:%20JS&style=flat-square)
+![CSS gzip size](http://img.badgesize.io/https://unpkg.com/iview/dist/styles/iview.css?compression=gzip&label=gzip%20size:%20CSS&style=flat-square)
+[![Join the chat at https://gitter.im/iview/iview](https://img.shields.io/badge/chat-on_gitter-30b392.svg?style=flat-square)](https://gitter.im/iview/iview?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### A high quality  UI Toolkit built on Vue.js.
 
 > This branch is for Vue.js 2.x
@@ -16,7 +23,7 @@
 
 ### [English (2.0)](https://www.iviewui.com)
 ### [中文文档 (2.0)](https://www.iviewui.com)
-### [中文文档 (1.0)](http://v1.iviewui.com)
+[中文文档 (1.0)](http://v1.iviewui.com)
 
 ## Overview
 
@@ -26,16 +33,15 @@
 
 - Dozens of useful and beautiful components.
 - Friendly API. It's made for people with all skill levels.
-- Extensive documentation.
+- Extensive documentation and demos.
 - It is quite beautiful.
-- Support Vue.js 2 and Vue.js 1.
+- Supports Vue.js 2 and Vue.js 1.
 
 ## Install
 
-### Install webpack project in the first place
-We recommend you install project through [iView Cli](https://github.com/iview/iview-cli) Or [iview-project](https://github.com/iview/iview-project).
+> Please install Webpack first
 
-You can also use [vue-cli](https://github.com/vuejs/vue-cli).
+We recommend you install project through [iView Cli](https://github.com/iview/iview-cli) Or [iview-project](https://github.com/iview/iview-project). You can also use [vue-cli](https://github.com/vuejs/vue-cli).
 
 ### Install iView
 
@@ -44,9 +50,13 @@ using npm
 npm install iview --save
 ```
 Or using script tag for global use
+
 ```html
 <script type="text/javascript" src="iview.min.js"></script>
+<link rel="stylesheet" href="dist/styles/iview.css">
 ```
+
+More info [in the website](https://www.iviewui.com/docs/guide/install-en)
 
 ## Usage
 
@@ -64,7 +74,9 @@ Or using script tag for global use
     }
 </script>
 ```
-Use css
+
+Using css via `import`:
+
 ```js
 import 'iview/dist/styles/iview.css';
 ```
@@ -74,10 +86,17 @@ import 'iview/dist/styles/iview.css';
 - Support Vue.js 2.x
 - Support Vue.js 1.x [Visit 1.0 doc](http://v1.iviewui.com/)
 - Support SSR
-- Support Nuxt.js
+- Support [Nuxt.js](https://nuxtjs.org/)
 - [Electron](http://electron.atom.io/)
 - iView does not support IE8 or below since [Vue.js](https://vuejs.org/v2/guide/reactivity.html) is using Object.defineProperty which do not be supported by these browsers to track changes.
 
+## Community
+
+If you want to contribute, have questions or bugs to report:
+
+**Questions:** you can find other users at [Gitter chat](https://gitter.im/iview/iview) or post on [StackOverflow using `[iview-ui]` tag](https://stackoverflow.com/questions/tagged/iview-ui)  
+**Bugs:** [file a issue here](https://github.com/iview/iview/issues) and please provide a example so we can help you better  
+**Contribute:** welcome to contact us in [Gitter chat](https://gitter.im/iview/iview), WeChat or via mail to `admin@aresn.com`. PRs welcome!
 
 ## Major Contributors
 |Name|Avatar|Name|Avatar|Name|Avatar|
@@ -92,7 +111,7 @@ import 'iview/dist/styles/iview.css';
 - [TalkingData](https://github.com/TalkingData)
 - [Vue](https://github.com/vuejs/vue)
 - [Webpack](https://github.com/webpack/webpack)
-- [ionicons](https://github.com/driftyco/ionicons)
+- [Ionicons](https://github.com/driftyco/ionicons)
 - [Ant Design](https://github.com/ant-design/ant-design)
 
 ## License
